@@ -29,11 +29,11 @@ h4 {
   width: 25%;
 }
 .module {
-  padding: 20px;
+  /* padding: 20px;ß */
   text-align: center;
   color: #eee;
-  max-height: 120px;
-  min-width: 120px;
+  /* max-height: 120px; */
+  /* min-width: 120px; */
   background-color: #3f525c;
   border-radius: 2px;
 }
@@ -41,6 +41,9 @@ h4 {
   background-color: #EEE;
   cursor: pointer;
   color: #607d8b;
+}
+img {
+  width: 100%;
 }
 .grid-pad {
   padding: 10px 0;
