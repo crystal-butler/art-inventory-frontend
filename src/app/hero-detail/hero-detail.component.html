@@ -1,9 +1,30 @@
 <div *ngIf="hero">
+  <a [href]="hero.image" target="_blank">
+    <img [src]="hero.image" [alt]="hero.name" class="art-image" />
+  </a>
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label>title:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="hero.name" placeholder="title"/>
+    </label>
+    <label>price:
+      <input [(ngModel)]="hero.price" placeholder="0"/>
+    </label>
+    <label>artist:
+      <input [(ngModel)]="hero.artist" placeholder="artist" />
+    </label>
+    <label>gallery:
+      <input [(ngModel)]="hero.gallery" placeholder="gallery" />
+    </label>
+    <label>year made:
+      <input [(ngModel)]="hero.yearmade" placeholder="0" />
+    </label>
+    <label>year bought:
+      <input [(ngModel)]="hero.yearbought" placeholder="0" />
+    </label>
+    <label>medium:
+      <input [(ngModel)]="hero.medium" placeholder="medium" />
     </label>
   </div>
   <button (click)="goBack()">go back</button>

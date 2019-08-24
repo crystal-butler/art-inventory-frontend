@@ -1,21 +1,19 @@
-<h3>Click to Edit</h3>
+<h2>Click to Edit</h2>
 <div class="grid grid-pad">
   <a *ngFor="let hero of heroes" class="col-1-4"
       routerLink="/detail/{{hero.id}}">
     <div class="module hero">
-      <a [href]="hero.image" target="_blank">
         <img [src]="hero.image" [alt]="hero.name" class="art-image" />
-        {{ hero.name }}
-      </a>
+        <h3>{{ hero.name }}</h3>
     </div>
     <div class="art-metadata">
       <ul>
-        <li>Price: {{ hero.price }}</li>
-        <li>Artist: {{ hero.artist }}</li>
-        <li>Medium: {{ hero.medium }}</li>
-        <li>Year Made: {{ hero.yearmade }}</li>
-        <li>Gallery: {{ hero.gallery }}</li>
-        <li>Year Bought: {{ hero.yearbought }}</li>
+        <li><span style="font-weight: bold">Price: </span>{{ hero.price }}</li>
+        <li><span style="font-weight: bold">Artist: </span>{{ hero.artist }}</li>
+        <li><span style="font-weight: bold">Medium: </span>{{ hero.medium }}</li>
+        <li><span style="font-weight: bold">Year Made: </span>{{ hero.yearmade }}</li>
+        <li><span style="font-weight: bold">Gallery: </span>{{ hero.gallery }}</li>
+        <li><span style="font-weight: bold">Year Bought: </span>{{ hero.yearbought }}</li>
       </ul>
     </div>
   </a>

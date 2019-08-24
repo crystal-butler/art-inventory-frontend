@@ -28,3 +28,9 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+img {
+  width: 50%;
+}
+label {
+  display: block;
+}
