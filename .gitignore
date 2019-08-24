@@ -1,1 +1,5 @@
 node_modules
+ToH.code-workspace
+tslint.json
+package-lock.json
+.DS_Store
