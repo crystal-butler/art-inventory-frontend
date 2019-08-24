@@ -5,12 +5,22 @@
     <div class="module hero">
       <a [href]="hero.image" target="_blank">
         <img [src]="hero.image" [alt]="hero.name" class="art-image" />
+        {{ hero.name }}
       </a>
     </div>
     <div class="art-metadata">
-      
+      <ul>
+        <li>Price: {{ hero.price }}</li>
+        <li>Artist: {{ hero.artist }}</li>
+        <li>Medium: {{ hero.medium }}</li>
+        <li>Year Made: {{ hero.yearmade }}</li>
+        <li>Gallery: {{ hero.gallery }}</li>
+        <li>Year Bought: {{ hero.yearbought }}</li>
+      </ul>
     </div>
   </a>
 </div>
+<div style="display: block">
+  <app-hero-search></app-hero-search>
+</div>
 
-<app-hero-search></app-hero-search>
