@@ -66,6 +66,9 @@ img {
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
 }
+.attribute {
+  font-weight: bold;
+}
 /* @media (max-width: 600px) {
   .module {
     font-size: 10px;
