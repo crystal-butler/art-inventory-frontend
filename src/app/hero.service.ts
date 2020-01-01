@@ -25,7 +25,7 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => console.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
   }
@@ -48,7 +48,7 @@ export class HeroService {
   getHero404(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
+      tap(_ => console.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
@@ -60,7 +60,7 @@ export class HeroService {
       return of([]);
     }
     return this.http.get<Hero[]>(`${this.heroesUrl}/search/${term}`).pipe(
-      tap(_ => this.log(`found heroes matching "${term}"`)),
+      tap(_ => console.log(`found heroes matching "${term}"`)),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
@@ -71,7 +71,7 @@ export class HeroService {
   addHero(hero: Hero): Observable<Hero> {
     const saveUrl = this.heroesUrl;
     return this.http.post<Hero>(saveUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => console.log(`added art w/ id=${newHero.id}`)),
+      tap((newHero: Hero) => console.log(`added art w/ id=${newHero.id} named ${newHero.name}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
@@ -83,7 +83,7 @@ export class HeroService {
     const url = `${this.heroesUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted hero id=${id}`)),
+      tap(_ => console.log(`deleted hero id=${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
@@ -94,7 +94,7 @@ export class HeroService {
     const saveUrl = this.heroesUrl + `/${hero.id}`;
     console.log(`save url is ${saveUrl}`);
     return this.http.put(saveUrl, hero, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      tap(_ => console.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
@@ -112,7 +112,7 @@ export class HeroService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      console.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
