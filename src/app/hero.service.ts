@@ -5,21 +5,19 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
-import { MessageService } from './message.service';
-
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
   private heroesUrl = 'http://localhost:3000/arts';  // URL to web api
+  // private heroesUrl = 'http://crystalsartbackend-env.s2rweaxsq2.us-east-1.elasticbeanstalk.com/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+    private http: HttpClient) { }
 
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
@@ -117,10 +115,5 @@ export class HeroService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  }
-
-  /** Log a HeroService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
   }
 }
