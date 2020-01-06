@@ -10,7 +10,7 @@ import { Hero } from './hero';
 export class HeroService {
 
   private heroesUrl = 'http://localhost:3000/arts';  // URL to web api
-  // private heroesUrl = 'http://crystalsartbackend-env.s2rweaxsq2.us-east-1.elasticbeanstalk.com/';
+  // private heroesUrl = 'http://crystalsartbackend-env-1.s2rweaxsq2.us-east-1.elasticbeanstalk.com:3000/arts';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
