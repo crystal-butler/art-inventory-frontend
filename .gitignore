@@ -4,3 +4,8 @@ tslint.json
 package-lock.json
 .DS_Store
 .editorconfig
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
